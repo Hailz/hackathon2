@@ -11,17 +11,23 @@ angular
     $scope.currentUserId;
     $scope.currentUser;
 
-    //runAtPageRender();
+
+    // loads db data if user is logged in
+    runAtPageRender();
+
+    
 
     function runAtPageRender() {
 
       $scope.currentUserId = AuthFactory.getCurrentUserId();
 
-      UserFactory.getUser($scope.currentUserId)
-      .then(
-        function success(res) { $scope.currentUser = res.data; },
-        function error (err) { console.log('error in runAtPageRender()') }
-      );
+      if ($scope.currentUserId) {
+        UserFactory.getUser($scope.currentUserId)
+        .then(
+          function success(res) { $scope.currentUser = res.data; },
+          function error (err) { console.log('error in runAtPageRender()') }
+        );
+      }
     }
 
     $scope.isLoggedIn = function() {
@@ -45,7 +51,7 @@ angular
         UserFactory.deleteProfile(id)
         .then(
           function success(res){
-            Auth.removeToken();
+            AuthFactory.removeToken();
             $location.path('/');
           },
           function error(err){

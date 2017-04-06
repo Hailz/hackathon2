@@ -2,12 +2,11 @@ angular
 .module('App')
 .controller('AuthCtrl', [
   '$scope',
-  '$http',
   '$state',
   '$window',
   'AuthFactory',
   'UserFactory',
-  function($scope, $http, $state, $window, AuthFactory, UserFactory) {
+  function($scope, $state, $window, AuthFactory, UserFactory) {
     // SIGN UP STUFF
     $scope.currentUserId;
     $scope.newUser = {
@@ -28,15 +27,15 @@ angular
               AuthFactory.saveToken(res.data.token);
               AuthFactory.saveCurrentUserId(res.data.user.id)
               $scope.currentUserId = $window.localStorage['currentUserId'];
-              $state.go("home")
+              $state.go('home')
             },
             function error(err) { 
-              console.log("Uh oh. Login Failed at /api/auth route in userSignup().") 
+              console.log('Uh oh. Login Failed at /api/auth route in userSignup().') 
             }
           )
         }, 
         function error(err) {
-          console.log("Error at /api/users route in userSignup()", err)
+          console.log('Error at /api/users route in userSignup()', err)
         }
       )
     }
@@ -48,16 +47,15 @@ angular
     };
 
     $scope.userLogin = function() {
-      console.log('this is being called')
       UserFactory.userLogin($scope.user)
       .then(
         function success(res) {
-          Auth.saveToken(res.data.token);
-          Auth.saveCurrentUserId(res.data.user.id);
-          $state.go("home")
+          AuthFactory.saveToken(res.data.token);
+          AuthFactory.saveCurrentUserId(res.data.user.id);
+          $state.go('home')
         },
         function error(err) {
-          console.log("Uh oh. Login Failed at userlogin()")
+          console.log('Uh oh. Login Failed at userlogin(), ' + err.data.message)
         }
       )
     }
