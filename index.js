@@ -30,7 +30,7 @@ app.use('/api/users', expressJWT({secret: secret}).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
 
-app.use('/api/items', require('./controllers/items'));
+app.use('/api/items', require('./controllers/item'));
 app.use('/api/comments', require('./controllers/comments'));
 
 
