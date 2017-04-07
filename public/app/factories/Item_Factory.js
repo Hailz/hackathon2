@@ -11,11 +11,11 @@ angular
       getAllItems: function() {
         // returns an array of item objects
         // values: id, name, photo, price, size, species
-        //         condition, description
+        //         sellerId, condition, description
         return $http.get('/api/items');
       },
       postItem: function(itemObj) {
-        console.log('post route in item factory, item post: ' itemObj)
+        console.log('post route in item factory, item post: ', itemObj)
         return $http.post('/api/items', itemObj);
       },
       updateItem: function(itemObj){

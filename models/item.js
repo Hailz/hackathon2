@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+ivar mongoose = require('mongoose');
 
 var ItemSchema = mongoose.Schema({
   name: {
@@ -18,6 +18,10 @@ var ItemSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  sellerId: {
+    type: String,
+    required: true
+  },
   species:      String,
   condition:    String,
   description:  String,
@@ -31,6 +35,7 @@ ItemSchema.set('toJSON', {
       photo:        ret.photo,
       price:        ret.price,
       size:         ret.size,
+      sellerId:     ret.sellerId,
       species:      ret.species,
       condition:    ret.condition,
       description:  ret.description
