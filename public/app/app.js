@@ -21,7 +21,8 @@ angular
     })
     .state('allSellers', {
         url: '/allSellers',
-        templateUrl: 'app/views/allSellers.html'
+        templateUrl: 'app/views/allSellers.html',
+        controller: 'AllSellersCtrl'
     })
     .state('checkout', {
         url: '/checkout',

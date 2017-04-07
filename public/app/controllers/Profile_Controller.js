@@ -3,9 +3,10 @@ angular
 .controller('ProfileCtrl', [
   '$scope',
   '$state',
+  '$location',
   'AuthFactory',
   'UserFactory',
-  function($scope, $state, AuthFactory, UserFactory) {
+  function($scope, $state, $location, AuthFactory, UserFactory) {
     
     //add local storage to grab currentUser
     $scope.currentUserId;
