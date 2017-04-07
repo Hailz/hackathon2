@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var CommentSchema = mongoose.Schema({
-  sellarId: String,
+  sellarId:   String,
   reviewerId: String,
   comment: {
    type: String,
