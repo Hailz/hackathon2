@@ -1,6 +1,6 @@
 angular
 .module('App')
-.controller('ProfileCtrl', [
+.controller('SellerProfileCtrl', [
   '$scope',
   '$state',
   '$stateParams',

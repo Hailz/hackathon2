@@ -1,19 +1,19 @@
 <form>
   <div class="form-group">
     <label>Product Name:</label>
-    <input ng-model='item.name' class="form-control" type="text" name="productName">
+    <input ng-model='newItem.name' class="form-control" type="text" name="productName">
   </div>
   <div class="form-group">
     <label>Photo Link:</label>
-    <input ng-model='item.photo' class="form-control" type="url" name="photoLink">
+    <input ng-model='newItem.photo' class="form-control" type="url" name="photoLink">
   </div>
   <div class="form-group">
     <label>Price:</label>
-    <input ng-model='item.price' class="form-control" type="text" name="price">
+    <input ng-model='newItem.price' class="form-control" type="text" name="price">
   </div>
   <div class="form-group">
     <label>Condition:</label>
-    <select ng-model='condition' class="form-control">
+    <select ng-model='newItem.condition' class="form-control">
       <option>New</option>
       <option>Used-Like New</option>
       <option>Used-Good</option>
@@ -23,7 +23,7 @@
   </div>
   <div class="form-group">
     <label>Who was this item sized for?</label>
-    <select ng-model='species' class="form-control">
+    <select ng-model='newItem.species' class="form-control">
       <option value="child">Children</option>
       <option value="cat">Cat</option>
       <option value="dog">Dog</option>
@@ -31,7 +31,7 @@
   </div>
   <div class="form-group">
     <label> What size is it?</label>
-    <select ng-model="item.size" class="form-control">
+    <select ng-model="newItem.size" class="form-control">
       <option value="xs">XS</option>
       <option value="s">S</option>
       <option value="m">M</option>
@@ -39,6 +39,10 @@
       <option value="xl">XL</option>
       <option value="xxl">XXL</option>
     </select>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input ng-model='newItem.description' type="text" class="form-control text-box" name="description">
   </div>
   <button ng-click='addItem()' type="submit" class="btn">Create Item Posting</button>
 </form>

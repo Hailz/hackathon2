@@ -28,7 +28,8 @@ angular
     })
     .state('createItem', {
         url: '/createItem',
-        templateUrl: 'app/views/createItem.html'
+        templateUrl: 'app/views/createItem.html',
+        controller: 'CreateItemCtrl'
     })
     .state('signup', {
         url: '/signup',
@@ -47,7 +48,7 @@ angular
     .state('sellerProfile', {
         url: '/sellerProfile/:id',
         templateUrl: 'app/views/sellerProfile.html',
-        controller: 'sellerProfileCtrl'
+        controller: 'SellerProfileCtrl'
     })
     .state('userForSale', {
         url: '/userForSale',
