@@ -6,5 +6,6 @@
     <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
     <p>{{item.price}}</p>
     <img ng-src="{{item.photo}}">
+    <button ng-click='deleteItem(item._id)'></button>
   </content>
 </div>

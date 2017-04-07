@@ -16,6 +16,7 @@ var User = require('./models/user');
 var Item = require('./models/item');
 var Comment = require('./models/comment');
 var Message = require('./models/message');
+var ShoppingCart = require('./models/shoppingCart')
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
 
@@ -34,7 +35,7 @@ app.use('/api/users', expressJWT({secret: secret}).unless({
 app.use('/api/items', require('./controllers/items'));
 app.use('/api/comments', require('./controllers/comments'));
 app.use('/api/messages', require('./controllers/messages'));
-
+app.use('/api/shoppingCart', require('./controllers/shoppingCart'));
 
 
 // this middleware will check if expressJWT did not authorize the user, and return a message

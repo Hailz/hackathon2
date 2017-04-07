@@ -1,10 +1,10 @@
-<div ng-if='!items'>
+<div ng-if='!saleItems'>
   <h2>You don't have any items for sale right now! <a href="/createItem">Add a sale item.</a></h2>
 </div>
 
-<content ng-if='items'>
-  <div ng-repeat='item in items track by item._id'>
-  <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
-  <img ng-src="{{item.photo}}">
+<content ng-if='saleItems'>
+  <div ng-repeat='item in saleItems track by item._id'>
+    <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+    <img ng-src="{{item.photo}}">
   </div>
 </content>

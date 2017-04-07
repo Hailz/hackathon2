@@ -11,11 +11,8 @@ angular
     $scope.currentUserId;
     $scope.currentUser;
 
-
     // loads db data if user is logged in
     runAtPageRender();
-
-    
 
     function runAtPageRender() {
 

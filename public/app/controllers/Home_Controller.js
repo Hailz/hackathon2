@@ -5,7 +5,8 @@ angular
   '$state',
   'AuthFactory',
   'UserFactory',
-  function($scope, $state, AuthFactory, UserFactory) {
+  'ItemFactory',
+  function($scope, $state, AuthFactory, UserFactory, ItemFactory) {
 
     $scope.isLoggedIn = function() {
         return Auth.isLoggedIn();

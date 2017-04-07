@@ -10,6 +10,10 @@ var UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  userName: {
+    type: String,
+    required: true
+  },
   photo: {
     type: String,
     required: true
@@ -33,6 +37,7 @@ UserSchema.set('toJSON', {
       id:         ret._id,
       firstName:  ret.firstName,
       lastName:   ret.lastName,
+      userName:   ret.userName, 
       photo:      ret.photo,
       email:      ret.email,
       location:   ret.location,
