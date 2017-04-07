@@ -34,7 +34,7 @@ router.put('/:id', function(req, res){
 router.delete('/:id', function(req, res){
   Item.findByIdAndRemove(req.params.id, function(err){
     if (err) return res.status(500).send(err);
-    return res.send({message: 'Delete Successful on serverside'});
+    return res.send({message: 'Delete Successful'});
   })
 })
 
