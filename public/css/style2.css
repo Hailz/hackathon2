@@ -13,3 +13,9 @@
 .navbar {
   height: 60px;
 }
+.filterBar {
+  border: 1px solid red;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+}
