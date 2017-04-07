@@ -45,7 +45,7 @@ angular
         templateUrl: 'app/views/404.html'
     })
     .state('sellerProfile', {
-        url: '/sellerProfile',
+        url: '/sellerProfile/:id',
         templateUrl: 'app/views/sellerProfile.html',
         controller: 'sellerProfileCtrl'
     })

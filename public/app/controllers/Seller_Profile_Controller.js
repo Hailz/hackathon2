@@ -15,15 +15,15 @@ angular
     $scope.currentUserId;
     $scope.sellarId;
     $scope.sellerInfo;
-    $scope.allItemsArray;
-    $scope.allCommentsArray;
+    $scope.sellerItems;
+    $scope.commentsBoutSeller;
 
     // loads db data if user is logged in
     runAtPageRender();
 
     
     function runAtPageRender() {
-      $scope.currentUserId = AuthFactory.getCurrentUserId();
+      $scope.currentUserId = $window.localStorage['currentUserId'];
       $scope.sellerId = $stateParams.id;
 
       if ($scope.currentUserId) {
@@ -41,13 +41,13 @@ angular
         .then(
           function success(res) {
             // expecting an array of all items from all users
-            $scope.allItemsArray = res.data;
+            $scope.sellerItems = res.data;
             // filter through only the comment that belongs to user
-            $scope.allItemsArray = $scope.allItemsArray.filter(function(item) {
-              
+            $scope.sellerItems = $scope.sellerItems.filter(function(item) {
+              return item.sellerId == $scope.sellerId;
             })
             // show on page
-            console.log(res)
+            console.log('sellerItems: ', $scope.sellerItems)
           },
           function error(err) {
             console.log('error in getAllItems() in itemfactory() in runAtPageRender() ', err)
@@ -57,51 +57,25 @@ angular
         CommentFactory.getAllComments()
         .then(
           function success(res) {
-            $scope.allCommentsArray;
-
             // expecting an array of all comments from all users
+            $scope.commentsBoutSeller = res.data;
             // filter through only the comment for the seller page
+            $scope.commentsBoutSeller = $scope.commentsBoutSeller.filter(function(comment) {
+              return comment.sellerId == $scope.sellerId;
+            })
+
             // show on page
-            console.log(res)
+            console.log('comments about seller: ', $scope.commentsBoutSeller);
           },
           function error(err) {
             console.log('error in getAllComments() in itemfactory() in runAtPageRender() ', err)
           }
         )
-
       }
     }
 
     $scope.isLoggedIn = function() {
       return AuthFactory.isLoggedIn();
     }
-
-    $scope.updateProfile = function(){
-      UserFactory.updateProfile($scope.currentUser)
-      .then(
-        function success(res){
-          console.log('profile updated', res)
-          $state.go('profile')
-      }, 
-        function error(err){
-          console.log('error occured in updateprofile()', err);
-      })
-    }
-
-    $scope.deleteProfile = function(id){
-        console.log('deleteprofile() id', id);
-        UserFactory.deleteProfile(id)
-        .then(
-          function success(res){
-            AuthFactory.removeToken();
-            $location.path('/');
-          },
-          function error(err){
-            console.log('error in deleteProfile()', err);
-          }
-        )
-    }
-
-
   }
 ])
