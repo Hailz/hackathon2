@@ -19,7 +19,7 @@ angular
         templateUrl: 'app/views/allForSale.html'
     })
     .state('editItem', {
-        url: '/editItem',
+        url: '/editItem/:id',
         templateUrl: 'app/views/editItem.html',
         controller: 'EditItemCtrl'
     })

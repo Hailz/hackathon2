@@ -1,14 +1,5 @@
 <h1>Item For Sale</h1>
 
-<h1>item name: {{item.name}}</h1>
-<h3>price: {{item.price}}</h3>
-<p>condition: {{item.condition}}</p>
-<img ng-src="{{item.photo}}">
-<p>description: {{item.description}}</p>
-<p>species: {{item.species}}</p>
-<p>size: {{item.size}}</p>
-<p>sold by: {{userName}}</p>
-
 <content>
   <div class="form-group">
     <label>Product Name:</label>
@@ -52,5 +43,7 @@
       <option value="xxl">XXL</option>
     </select>
   </div>
+  <button ng-click='updateItem(item.id)' class="btn btn-warning">Edit Item</button>
+  <button ng-click='deleteItem(item)' class="btn btn-danger">X</button>
 
 </content>

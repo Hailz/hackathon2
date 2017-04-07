@@ -36,16 +36,6 @@ angular
           console.log('error in getAllItems() in itemfactory() in runAtPageRender() ', err)
         })
 
-    $scope.deleteItem = function(item){
-      console.log("Item ID is:", item.id)
-      var id = item.id
-      ItemFactory.deleteItem(id).then(function success(res){
-        $location.path('/');
-      }, function error(err){
-        console.log('Delete item error:', err)
-      })
-    }
-
     $scope.isLoggedIn = function() {
       return AuthFactory.isLoggedIn();
     }
