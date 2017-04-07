@@ -1,6 +1,7 @@
 <h1>All Sellers</h1>
 
-<content ng-repeat='seller in sellers track by seller._id'>
-  <h2>{{seller.name}}</h2>
+<content ng-repeat='seller in sellers track by seller.id'>
+  <h2>{{seller.userName}}</h2>
+  <h3>{{seller.location}}</h3>
   <img ng-src="{{seller.photo}}">
 </content>
