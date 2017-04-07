@@ -9,7 +9,9 @@
         <a class="navbar-brand" href="/allForSale">
             <span class="glyphicon-search glyphicon"></span> Search
         </a>
-
+        <a class="navbar-brand" href="/userForSale">Your Items</a>
+        <a class="navbar-brand" href="/allSellers">Sellers</a>
+        <a class="navbar-brand" href="/createItem">Create An Item</a>
         <!-- ng-show="isLoggedIn() for create item, profile, your items" -->
     
     <!--     <a class="navbar-brand" href=""></a> -->
@@ -20,7 +22,7 @@
             <span class="icon-bar"></span>
         </button>
     </div>
-<!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavBar">
         <ul class="nav navbar-nav navbar-right">
             <!-- SIGNUP/LOGIN -->
@@ -31,22 +33,25 @@
                 <a href="/login" ng-hide="isLoggedIn()">Login</a>
             </li>
             <!-- PROFILE -->
-            <li>
+            <li ng-if='isLoggedIn()'>
                 <a class="navbar-brand" href="/profile">
                     <span class="glyphicon-user glyphicon"></span> Profile
                 </a>
             </li>
             <!-- LOGOUT -->
-            <li><a ng-click="logout()" ng-show="isLoggedIn()" class="glyphicon glyphicon-log-out">Logout</a></li>
+            <li>
+                <a class="navbar-brand" ng-click="logout()" ng-show="isLoggedIn()">
+                <span class="glyphicon-log-out glyphicon"></span> Logout
+                </a>
+            </li>
+            <!-- SHOPPING CART -->
+            <li>
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon-shopping-cart glyphicon"></span>
+                </a>
+            </li>
         </ul>
     </div><!-- /.navbar-collapse -->
 
-    <!-- SHOPPING CART -->
-    <a class="navbar-brand navbar-right" href="#">
-        <span class="glyphicon-shopping-cart glyphicon"></span>
-    </a>
 </nav>
 
-<!-- <a class="navbar-brand" href="/userForSale">Your Items</a>
-<a class="navbar-brand" href="/allSellers">Sellers</a>
-<a class="navbar-brand" href="/createItem">Create An Item</a> -->
