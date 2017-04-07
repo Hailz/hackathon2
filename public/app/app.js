@@ -29,6 +29,11 @@ angular
         templateUrl: 'app/views/allSellers.html',
         controller: 'AllSellersCtrl'
     })
+    .state('shoppingCart', {
+        url: '/shoppingCart',
+        templateUrl: 'app/views/shoppingCart.html',
+        controller: 'ShoppingCartCtrl'
+    })
     .state('checkout', {
         url: '/checkout',
         templateUrl: 'app/views/checkout.html'

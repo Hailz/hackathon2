@@ -13,7 +13,7 @@
         <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
         <img class="searchItemImg" ng-src="{{item.photo}}">
         <a class="btn btn-primary" href="/checkout">Purchase!</a>
-        <button ng-click='item'>Add to Cart</button>
+        <button ng-click='addToCart(item)'>Add to Cart</button>
       </div>
     </content>
   </div>
@@ -23,7 +23,7 @@
         <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
         <img class="searchItemImg" ng-src="{{item.photo}}">
         <a class="btn btn-primary" href="/checkout">Purchase!</a>
-        <button ng-click=''>Add to Cart</button>
+        <button ng-click='addToCart(item)'>Add to Cart</button>
       </div>
     </content>
   </div>
