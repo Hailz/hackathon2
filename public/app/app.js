@@ -76,6 +76,11 @@ angular
         url: '/profile',
         templateUrl: 'app/views/profile.html',
         controller: 'ProfileCtrl'
+    })
+    .state('editProfile', {
+        url: '/editProfile',
+        templateUrl: 'app/views/editProfile.html',
+        controller: 'ProfileCtrl'
     });
 
     $locationProvider.html5Mode(true);

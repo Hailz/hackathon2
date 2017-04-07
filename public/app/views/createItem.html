@@ -1,18 +1,18 @@
 <form>
   <div class="form-group">
-    <label>Product Name:</label>
+    <label class="control-label">Product Name:</label>
     <input ng-model='newItem.name' class="form-control" type="text" name="productName">
   </div>
   <div class="form-group">
-    <label>Photo Link:</label>
+    <label class="control-label">Photo Link:</label>
     <input ng-model='newItem.photo' class="form-control" type="url" name="photoLink">
   </div>
   <div class="form-group">
-    <label>Price:</label>
+    <label class="control-label">Price:</label>
     <input ng-model='newItem.price' class="form-control" type="text" name="price">
   </div>
   <div class="form-group">
-    <label>Condition:</label>
+    <label class="control-label">Condition:</label>
     <select ng-model='newItem.condition' class="form-control">
       <option>New</option>
       <option>Used-Like New</option>
@@ -22,7 +22,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label>Who was this item sized for?</label>
+    <label class="control-label">Who was this item sized for?</label>
     <select ng-model='newItem.species' class="form-control">
       <option value="child">Children</option>
       <option value="cat">Cat</option>
@@ -30,7 +30,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label> What size is it?</label>
+    <label class="control-label"> What size is it?</label>
     <select ng-model="newItem.size" class="form-control">
       <option value="xs">XS</option>
       <option value="s">S</option>
@@ -41,7 +41,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label>Description</label>
+    <label class="control-label">Description</label>
     <input ng-model='newItem.description' type="text" class="form-control text-area" name="description">
   </div>
   <button ng-click='addItem()' type="submit" class="btn btn-primary">Create Item Posting</button>

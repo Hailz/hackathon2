@@ -1,12 +1,32 @@
-<h1>Item For Sale</h1>
+<div class="row">
+  <a class="text-left" href="/allForSale">< Return to Search Page</a>
+</div>
 
+<div class="row">
+  <div class="col-xs-3">
+    <img ng-src="{{item.photo}}">
+  </div>
+  <div>
+    <h1>{{item.name}}</h1>
+    <h3>{{item.price}}</h3>
+    <p>{{item.size}}</p>
+    <p>{{item.condition}}</p>
+  </div> 
+  <button ng-click=''>Add To Cart</button> 
+</div>
+<div class="row">
+  <div>
+    <p>DESCRIPTION: {{item.description}}</p>
+  </div>
+</div>
+<div class="row">
+  <div>
+    <h4>Seller: {{user.userName}}</h4>
+    <p>Location: {{user.location}}</p>
+  </div>
+</div>
 
-<h1>item name: {{item.name}}</h1>
-<h3>price: {{item.price}}</h3>
-<p>condition: {{item.condition}}</p>
-<img ng-src="{{item.photo}}">
-<p>description: {{item.description}}</p>
 <p>species: {{item.species}}</p>
-<p>size: {{item.size}}</p>
-<p>sold by: {{userName}}</p>
+
+
   
