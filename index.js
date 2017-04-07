@@ -14,7 +14,7 @@ var app = express();
 var mongoose = require('mongoose');
 var User = require('./models/user');
 var Item = require('./models/item');
-var Comment = require('./models/comments');
+var Comment = require('./models/comment');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
 
