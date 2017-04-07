@@ -18,6 +18,11 @@ angular
         url: '/allForSale',
         templateUrl: 'app/views/allForSale.html'
     })
+    .state('editItem', {
+        url: '/editItem',
+        templateUrl: 'app/views/editItem.html',
+        controller: 'EditItemCtrl'
+    })
     .state('allSellers', {
         url: '/allSellers',
         templateUrl: 'app/views/allSellers.html'

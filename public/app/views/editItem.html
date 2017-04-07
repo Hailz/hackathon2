@@ -1,0 +1,56 @@
+<h1>Item For Sale</h1>
+
+<h1>item name: {{item.name}}</h1>
+<h3>price: {{item.price}}</h3>
+<p>condition: {{item.condition}}</p>
+<img ng-src="{{item.photo}}">
+<p>description: {{item.description}}</p>
+<p>species: {{item.species}}</p>
+<p>size: {{item.size}}</p>
+<p>sold by: {{userName}}</p>
+
+<content>
+  <div class="form-group">
+    <label>Product Name:</label>
+    <input ng-model='item.name' name="productName">
+  </div>
+  <div class="form-group">
+    <img ng-src="{{item.photo}}">
+    <p>Photo URL:</p>
+    <input type="text" ng-model="item.photo">
+  </div>
+  <div class="form-group">
+    <label>Price:</label>
+    <input ng-model='item.price' class="form-control" type="text" name="price">
+  </div>
+  <div class="form-group">
+    <label>Condition:</label>
+    <select ng-model='item.condition' class="form-control">
+      <option>New</option>
+      <option>Used-Like New</option>
+      <option>Used-Good</option>
+      <option>Used-Fair</option>
+      <option>Collectible</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Who was this item sized for?</label>
+    <select ng-model='item.species' class="form-control">
+      <option value="child">Children</option>
+      <option value="cat">Cat</option>
+      <option value="dog">Dog</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label> What size is it?</label>
+    <select ng-model="item.size" class="form-control">
+      <option value="xs">XS</option>
+      <option value="s">S</option>
+      <option value="m">M</option>
+      <option value="l">L</option>
+      <option value="xl">XL</option>
+      <option value="xxl">XXL</option>
+    </select>
+  </div>
+
+</content>

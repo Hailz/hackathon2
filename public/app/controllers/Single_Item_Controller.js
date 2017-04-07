@@ -3,7 +3,7 @@ angular
 .controller('SingleItemCtrl', [
   '$scope',
   '$state',
-  '$stateParams'
+  '$stateParams',
   'UserFactory',
   'ItemFactory',
   function($scope, $state, $stateParams, UserFactory, ItemFactory) {
