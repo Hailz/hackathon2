@@ -1,13 +1,17 @@
-<nav class="navbar navbar-inverse" role="navigation" ng-controller="NavCtrl">
-<!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar navbar-inverse navBar" role="navigation" ng-controller="NavCtrl">
+    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="/">Home</a>
-        <a class="navbar-brand" href="/profile">Profile</a>
-        <a class="navbar-brand" href="/userForSale">Your Items</a>
-        <a class="navbar-brand" href="/allSellers">Sellers</a>
-        <a class="navbar-brand" href="/createItem">Create An Item</a> 
-        <a class="navbar-brand glyphicon glyphicon-search" href="/allForSale">Search</a>
+        <!-- LOGO -->
+        <a class="navbar-brand logoHomeLink" href="/">
+            <img class="navLogo" src="http://res.cloudinary.com/dxumleria/image/upload/v1491587202/petsylogo_white_360_ipslmb.png">
+        </a>
+        <!-- SEARCH -->
+        <a class="navbar-brand" href="/allForSale">
+            <span class="glyphicon-search glyphicon"></span> Search
+        </a>
+
         <!-- ng-show="isLoggedIn() for create item, profile, your items" -->
+    
     <!--     <a class="navbar-brand" href=""></a> -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
             <!-- <span class="sr-only">Toggle navigation</span> -->
@@ -19,9 +23,30 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="myNavBar">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="/signup" ng-hide="isLoggedIn()" class="glyphicon glyphicon-user">Signup</a></li>
-            <li><a href="/login" ng-hide="isLoggedIn()" class="glyphicon glyphicon-log-in">Login</a></li>
+            <!-- SIGNUP/LOGIN -->
+            <li>
+                <a href="/signup" ng-hide="isLoggedIn()">Signup</a>
+            </li>
+            <li>
+                <a href="/login" ng-hide="isLoggedIn()">Login</a>
+            </li>
+            <!-- PROFILE -->
+            <li>
+                <a class="navbar-brand" href="/profile">
+                    <span class="glyphicon-user glyphicon"></span> Profile
+                </a>
+            </li>
+            <!-- LOGOUT -->
             <li><a ng-click="logout()" ng-show="isLoggedIn()" class="glyphicon glyphicon-log-out">Logout</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
+
+    <!-- SHOPPING CART -->
+    <a class="navbar-brand navbar-right" href="#">
+        <span class="glyphicon-shopping-cart glyphicon"></span>
+    </a>
 </nav>
+
+<!-- <a class="navbar-brand" href="/userForSale">Your Items</a>
+<a class="navbar-brand" href="/allSellers">Sellers</a>
+<a class="navbar-brand" href="/createItem">Create An Item</a> -->
