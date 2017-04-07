@@ -19,3 +19,47 @@
   display: flex;
   flex-direction: column;
 }
+
+/*All for sale*/
+.heroImg {
+  border: 1px solid red;
+  height: 27em;
+}
+.heroText {
+  margin: 3em 0 0 2em;
+}
+.itemBox {
+  border: 1px solid red;
+  height: 15em;
+  width: 20em;
+}
+.searchItemImg{
+  width: 70%;
+  height: 60%;
+}
+
+/*Home */
+.homeItemBox {
+  height: 25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.missionStatementBox {
+  padding: 10px;
+  border: 1px solid red;
+  height: 8.5em;
+  width: 31%;
+}
+.missionStatementContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.divider10 {
+  min-height: 1px;
+  width: 100%;
+  height: 2em;
+}

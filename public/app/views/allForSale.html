@@ -8,37 +8,42 @@
     </div>
     <a ng-click='filterBy("cat")'>Cat</a>
     <a ng-click='filterBy("dog")'>Dog</a>
-    <a>Color</a>
-    <a>
+    <a ng-click='filterBy("color")'>Color</a>
+    <a ng-click='filterBy("cost")'>
       Cost <span class='glyphicon-arrow-up glyphicon'></span>
     </a>
-    <a>
+    <a ng-click='filterBy("color")'>
       Cost <span class='glyphicon-arrow-down glyphicon'></span>
     </a>
-    <a ng-click='filterBy("dog")'>Dog</a>
-    <a ng-click='filterBy("dog")'>Dog</a>
 
   </div>
   <div ng-if='search' class="row">
     <content ng-repeat='item in items | filter: search track by $index'>
       
-      <div class="col-xs-6">
+      <div class="col-xs-2">
         <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
         <img class="searchItemImg" ng-src="{{item.photo}}">
+        <p>{{item.description}}</p>
         <a class="btn btn-primary" href="/checkout">Purchase!</a>
-        <button ng-click='addToCart(item)'>Add to Cart</button>
       </div>
 
     </content>
   </div>
   <div ng-if='!search' class="row">
     <content ng-repeat='item in items track by $index'>
-      <div class="col-xs-2 col-m-2">
+      
+      <div class="col-xs-2 col-md-3">
         <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
         <img class="searchItemImg" ng-src="{{item.photo}}">
+        <p>{{item.description}}</p>
         <a class="btn btn-primary" href="/checkout">Purchase!</a>
-        <button ng-click='addToCart(item)'>Add to Cart</button>
       </div>
+
     </content>
   </div>
 </div>
+
+
+
+        <!-- <button ng-click='addToCart(item)'>Add to Cart</button>
+        <button ng-click='addToCart(item)'>Add to Cart</button> -->

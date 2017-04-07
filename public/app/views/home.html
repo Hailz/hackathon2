@@ -1,13 +1,46 @@
 <content>
-  <h1>Petsy</h1>
-  <div class="row">
-    <content ng-repeat='item in items track by item.id'>
-      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
-      <img ng-src="{{item.photo}}">
-      <a href="/checkout">Purchase!</a>
-      <button ng-click='addToCart(item)'>Add to Cart</button>
-    </content>  
-  </div>  
+  <div class="heroImg">
+    <h1 class="heroText">Text goes here</h1>
+    <button class="btn btn-primary btn-lg">Search</button>
+  </div>
+  <div class="divider10"></div>
+  
+  <div class="missionStatementContainer">
+    <div class="missionStatementBox">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.</p>
+    </div>
+    <div class="missionStatementBox">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.</p>
+    </div>
+    <div class="missionStatementBox">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.</p>
+    </div>    
+  </div>
+
+  <div>
+    <!-- 3 IMAGES OF STUFF FROM ITEMS ON SALE -->
+    <div class="row">
+      <div ng-repeat='item in items track by item.id'>
+        <div class =' homeItemBox col-xs-12 col-sm-4'>
+          <h2>
+            <a ng-href="/item/{{item.id}}">{{item.name}}</a>
+          </h2>
+          <img class="searchItemImg" ng-src="{{item.photo}}">
+          <a href="/checkout">Purchase!</a>
+          <button ng-click='addToCart(item)'>Add to Cart</button>
+        </div>
+      </div> 
+    </div>
+  </div>
 </content>
 
 
