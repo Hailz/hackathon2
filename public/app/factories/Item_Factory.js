@@ -5,7 +5,7 @@ angular
   function($http) {
     return {
       getSingleItem: function(id) {
-        return $http.post('/api/items/' + id);
+        return $http.get('/api/items/' + id);
         // see return values  in below comment
       },
       getAllItems: function() {

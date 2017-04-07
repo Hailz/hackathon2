@@ -10,7 +10,8 @@ angular
     $scope.userName;
     $scope.item;
     $scope.itemId = $stateParams.id;
-
+    console.log('item id: ', $scope.itemId)
+    
     ItemFactory.getSingleItem($scope.itemId)
     .then(
       function success(res) {
