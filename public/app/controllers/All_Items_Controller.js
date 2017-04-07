@@ -43,7 +43,7 @@ angular
       }
     );
     $scope.addToCart = function(item){
-      console.log(this.id)
+      console.log(item._id)
       $scope.newCartItem = {
         itemId: item.id,
         sellerId: item.sellerId,
