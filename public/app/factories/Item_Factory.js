@@ -15,7 +15,7 @@ angular
         return $http.get('/api/items');
       },
       postItem: function(itemObj) {
-        console.log('post route in item factory, item post: ' itemObj)
+        console.log('post route in item factory, item post: ' + itemObj)
         return $http.post('/api/items', itemObj);
       },
       updateItem: function(itemObj){
