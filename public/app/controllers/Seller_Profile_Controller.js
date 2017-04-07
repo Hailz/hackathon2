@@ -13,7 +13,7 @@ angular
     
     //add local storage to grab currentUser
     $scope.currentUserId;
-    $scope.sellarId;
+    $scope.sellerId;
     $scope.sellerInfo;
     $scope.sellerItems;
     $scope.commentsBoutSeller;

@@ -14,7 +14,7 @@ MessageSchema.set('toJSON', {
     var returnJson = {
       id:         ret._id,
       sellerId:   ret.sellerId,
-      messagerId: red.messagerId,
+      messagerId: ret.messagerId,
       message:    ret.message
     };
     return returnJson;

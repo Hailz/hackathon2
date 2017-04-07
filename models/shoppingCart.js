@@ -10,7 +10,7 @@ var ShoppingCartSchema = mongoose.Schema({
     required: true
   },
   userId: {
-    typer: String,
+    type: String,
     required: true
   }
 });
@@ -19,9 +19,9 @@ ShoppingCartSchema.set('toJSON', {
   transform: function(doc, ret, options) {
     var returnJson = {
       id:           ret._id,
-      itemId:         ret.itemId,
-      userId:       ret.userId, 
-      sellerId:     ret.sellerId
+      itemId:       ret.itemId, 
+      sellerId:     ret.sellerId,
+      userId:       ret.userId
     };
     return returnJson;
   }

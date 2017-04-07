@@ -12,8 +12,12 @@ angular
     $scope.newUser = {
       email: '',
       password: '',
-      name: '',
-      number: ''
+      firstName: '',
+      lastName: '',
+      userName: '',
+      photo: '',
+      location: '',
+      rating: 0
     };
 
     $scope.userSignup = function() {
