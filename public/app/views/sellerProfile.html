@@ -1,2 +1,44 @@
-<h1>{{user.name}}</h1>
-<img ng-src="user.photo">
+<!-- OBJECTS -->
+<h3>Seller Item Arr</h3>
+{{sellerItemArr}}
+<hr>
+
+<h3>Comments about seller Arr</h3>
+{{commentsBoutSeller}}
+<hr>
+
+<h3>Seller Info Obj</h3>
+{{sellerInfo}}
+
+<!-- SELLER INFO -->
+<h1>{{sellerInfo.firstName}}</h1>
+<img ng-src="sellerInfo.photo">
+<p>{{sellerInfo.email}}</p>
+<p>{{sellerInfo.firstName}} is based out of {{sellerInfo.location}}</p>
+<p>{{sellerInfo.rating}}</p>
+
+<!-- COMMENTS ABOUT SELLER -->
+<div>
+  <div ng-repeat="comment in commentsBoutSeller">
+    <div class="well">
+      {{ comment }}
+    </div>
+  </div>
+</div>
+
+<!-- SELLERS PRODUCTS -->
+
+<div>
+  <div ng-repeat="item in sellerItems">
+    <div class="well">
+      <img ng-src="{{sellerItem.photo}}">
+      <p>confirm this is correct seller's id: {{sellerId}}</p>
+      <p>product: {{sellerItem.name}}</p>
+      <p>price: {{sellerItem.price</p>
+      <p>size: {{sellerItem.size}}</p>
+      <p>species: {{sellerItem.species}}</p>
+      <p>condition: {{sellerItem.condition}}</p>
+      <p>description: {{sellerItem.description}}</p>
+    </div>
+  </div>
+</div>
