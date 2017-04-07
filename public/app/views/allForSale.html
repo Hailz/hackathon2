@@ -1,22 +1,30 @@
 <div ng-if='!items'>
   <h2>There aren't any items for sale right now!</h2>
 </div>
-<div ng-if='items'>
-  <div class="form-group input-group">
-    <input type="text" class="form-control" id="search" ng-model="search" placeholder="Filter Items for Sale">
+<div ng-if='items' class="container-fluid">
+  <div class="col-xs-2">
+    <div class="form-group input-group">
+      <input type="text" class="form-control" id="search" ng-model="search" placeholder="Filter Items for Sale">
+    </div>
   </div>
-  <div ng-if='search'>
+  <div ng-if='search' class="row">
     <content ng-repeat='item in items | filter: search track by $index'>
-      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
-      <img ng-src="{{item.photo}}">
-      <a href="/checkout">Purchase!</a>
+      <div class="col-xs-2 col-m-2">
+        <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
+        <img class="searchItemImg" ng-src="{{item.photo}}">
+        <a class="btn btn-primary" href="/checkout">Purchase!</a>
+        <button ng-click='addToCart(item)'>Add to Cart</button>
+      </div>
     </content>
   </div>
-  <div ng-if='!search'>
+  <div ng-if='!search' class="row">
     <content ng-repeat='item in items track by item.id'>
-      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
-      <img ng-src="{{item.photo}}">
-      <a href="/checkout">Purchase!</a>
+      <div class="col-xs-2 col-m-2">
+        <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
+        <img class="searchItemImg" ng-src="{{item.photo}}">
+        <a class="btn btn-primary" href="/checkout">Purchase!</a>
+        <button ng-click='addToCart(item)'>Add to Cart</button>
+      </div>
     </content>
   </div>
 </div>

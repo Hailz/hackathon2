@@ -6,6 +6,7 @@ router.route('/')
   .get(function(req, res) {
     // database call for all items
     ShoppingCart.find(function(err, shoppingCart) {
+      console.log('all items in shopping cart', shoppingCart)
       if (err) return res.status(500).send(err);
       return res.send(shoppingCart);
     });

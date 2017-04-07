@@ -2,7 +2,7 @@
   <h2>You don't have any items in your cart yet! <a href="/allForSale">Take a look at what there is for sale!</a></h2>
 </div>
 <div ng-if='cartItems'>
-  <content ng-repeat='item in cartItems track by item._id'>
+  <content ng-repeat='item in cartItems track by $index'>
     <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
     <p>{{item.price}}</p>
     <img ng-src="{{item.photo}}">

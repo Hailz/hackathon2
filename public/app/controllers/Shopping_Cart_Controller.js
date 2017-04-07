@@ -12,18 +12,13 @@ angular
     $scope.items = [];
     $scope.cartItems = [];
 
+    $scope.tempUser = AuthFactory.currentUser();
+    $scope.userId = $scope.tempUser.id;
+    console.log("User id " + $scope.userId)
 
     $scope.isLoggedIn = function() {
         return Auth.isLoggedIn();
     }
-
-     // DB CALL FOR USER INFO
-  UserFactory.getUser($scope.currentUserId)
-    .then(
-    // STORE USER INFO IN $SCOPE.VAR
-    function success(res) { $scope.userInfo = res.data; },
-    function error (err) { console.log('error in getting shopping cart') }
-    );
 
     //DB CALL FOR ALL SHOPPING CART ITEMS
   ShoppingCartFactory.getAllItems()
@@ -31,40 +26,42 @@ angular
     function success(res) {
       // expecting an array of all items in shopping cart
       $scope.shoppingCart = res.data;
+
       //filter
       $scope.shoppingCart = $scope.shoppingCart.filter(function(item){
-        return item.userId ==  $scope.user.Id
+        return item.userId ==  $scope.currentUserId
       })
+      console.log('THIS!!!!!', res.data)
+        // DB CALL FOR ALL ITEMS
+      ItemFactory.getAllItems()
+        .then(
+        function success(res) {
+          // expecting an array of all items from all users
+          $scope.items = res.data;
+          console.log("All the items... ", $scope.items)
+          // filter
+          $scope.cartItems = $scope.items.filter(function(item){
+            return item.Id == $scope.shoppingCart.itemId
+          })
+          console.log("Items in the users cart...", $scope.cartItems)
+        },
+        function error(err) {
+          console.log('error in getAllItems', err)
+        })
+
+        $scope.deleteItem = function(id){
+          console.log('Favorite to be deleted ID is '+ id)
+          ShoppingCartFactory.deleteItem(id).then(
+            function success(res){
+              $state.go('/')
+            },
+            function error(err){
+              console.log('Delete shopping cart item failed '+ err)
+            })
+        }
     },
     function error(err) {
       console.log('error in getting all the shopping cart items', err)
     })
-
-    // DB CALL FOR ALL ITEMS
-  ItemFactory.getAllItems()
-    .then(
-    function success(res) {
-      // expecting an array of all items from all users
-      $scope.items = res.data;
-      // filter
-      $scope.cartItems = $scope.items.filter(function(item){
-        return item.sellerId == $scope.shoppingCart.sellerId
-      })
-    },
-    function error(err) {
-      console.log('error in getAllItems', err)
-    })
-
-    $scope.deleteItem = function(id){
-      console.log('Favorite to be deleted ID is '+ id)
-      ShoppingCartFactory.deleteItem(id).then(
-        function success(res){
-          $state.go '/'
-        },
-        function error(err){
-          console.log('Delete shopping cart item failed '+ err)
-        })
-    }
-   
-    
+ 
 }])
