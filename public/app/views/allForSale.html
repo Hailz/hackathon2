@@ -6,6 +6,8 @@
     <div class="form-group input-group">
       <input type="text" class="form-control" id="search" ng-model="search" placeholder="Filter Items for Sale">
     </div>
+    <button ng-model='search' id="cat">Cat</button>
+    <button ng-model='search' id="dog">Dog</button>
   </div>
   <div ng-if='search' class="row">
     <content ng-repeat='item in items | filter: search track by $index'>
