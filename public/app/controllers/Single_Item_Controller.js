@@ -7,7 +7,7 @@ angular
   'UserFactory',
   'ItemFactory',
   function($scope, $state, $stateParams, UserFactory, ItemFactory) {
-    $scope.userName;
+    $scope.user;
     $scope.item;
     $scope.itemId = $stateParams.id;
     console.log('item id: ', $scope.itemId)
@@ -20,7 +20,7 @@ angular
         UserFactory.getUser($scope.item.sellerId)
         .then(
           function success(res) {
-            $scope.userName = res.data;
+            $scope.user = res.data;
           },
           function error(err) {
             console.log('error in getUser() within itemFactory()', err);
