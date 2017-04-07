@@ -15,6 +15,7 @@ var mongoose = require('mongoose');
 var User = require('./models/user');
 var Item = require('./models/item');
 var Comment = require('./models/comment');
+var Message = require('./models/message');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
 
@@ -30,8 +31,9 @@ app.use('/api/users', expressJWT({secret: secret}).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
 
-app.use('/api/items', require('./controllers/item'));
+app.use('/api/items', require('./controllers/items'));
 app.use('/api/comments', require('./controllers/comments'));
+app.use('/api/messages', require('./controllers/messages'));
 
 
 
