@@ -6,7 +6,7 @@ angular
   'AuthFactory',
   'UserFactory',
   'ItemFactory',
-  'ShoppingCartFactory'
+  'ShoppingCartFactory',
   function($scope, $state, AuthFactory, UserFactory, ItemFactory, ShoppingCartFactory) {
     $scope.shoppingCart = [];
     $scope.items = [];

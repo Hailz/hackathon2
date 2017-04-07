@@ -55,6 +55,11 @@ angular
         templateUrl: 'app/views/userForSale.html',
         controller: 'UserForSaleCtrl'
     })
+    .state('itemForSale', {
+        url: '/item/:id',
+        templateUrl: 'app/views/itemForSale.html',
+        controller: 'SingleItemCtrl'
+    })
     .state('profile',{
         url: '/profile',
         templateUrl: 'app/views/profile.html',
