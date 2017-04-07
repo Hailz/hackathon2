@@ -22,9 +22,9 @@ angular
         console.log('item updated in item factory: ' + itemObj.name);
         return $http.put('/api/items/' + itemObj.id, itemObj);
       },
-      deleteItem: function(itemObj){
-        console.log("deleting this item: " + itemObj.name);
-        return $http.delete('/api/items/' + itemObj);
+      deleteItem: function(id){
+        console.log("deleting this item: " + id);
+        return $http.delete('/api/items/' + id);
       }
     }
   }

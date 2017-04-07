@@ -3,8 +3,11 @@
 </div>
 
 <content ng-if='saleItems'>
-  <div ng-repeat='item in saleItems track by item._id'>
-    <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
-    <img ng-src="{{item.photo}}">
+  <div ng-repeat='item in saleItems track by $index'>
+    <div>
+      <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+      <img ng-src="{{item.photo}}">
+      <button ng-click='deleteItem(item._id)'>X</button>
+    <div>
   </div>
 </content>

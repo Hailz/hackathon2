@@ -30,11 +30,20 @@ angular
           return item.sellerId == $scope.userId
         })
         // show on page
-          console.log('sellerItems: ', $scope.sellerItems)
+          console.log('sellerItems: ', $scope.saleItems)
         },
         function error(err) {
           console.log('error in getAllItems() in itemfactory() in runAtPageRender() ', err)
         })
+
+    $scope.deleteItem = function(id){
+      console.log("Item ID is:", id)
+      ItemFactory.deleteItem(id).then(function success(res){
+        $location.path('/');
+      }, function error(err){
+        console.log('Delete item error:', err)
+      })
+    }
 
     $scope.isLoggedIn = function() {
       return AuthFactory.isLoggedIn();
