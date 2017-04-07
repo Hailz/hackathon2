@@ -14,6 +14,22 @@ angular
         templateUrl: 'app/views/home.html',
         controller: 'HomeCtrl'
     })
+    .state('allForSale', {
+        url: '/allForSale',
+        templateUrl: 'app/views/allForSale.html'
+    })
+    .state('allSellers', {
+        url: '/allSellers',
+        templateUrl: 'app/views/allSellers.html'
+    })
+    .state('checkout', {
+        url: '/checkout',
+        templateUrl: 'app/views/checkout.html'
+    })
+    .state('createItem', {
+        url: '/createItem',
+        templateUrl: 'app/views/createItem.html'
+    })
     .state('signup', {
         url: '/signup',
         templateUrl: 'app/views/userSignup.html',
@@ -27,6 +43,14 @@ angular
     .state('404', {
         url: '/404',
         templateUrl: 'app/views/404.html'
+    })
+    .state('sellerProfile', {
+        url: '/sellerProfile',
+        templateUrl: 'app/views/sellerProfile.html'
+    })
+    .state('userForSale', {
+        url: '/userForSale',
+        templateUrl: 'app/views/userForSale.html'
     })
     .state('profile',{
         url: '/profile',
