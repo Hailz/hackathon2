@@ -2,7 +2,18 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = mongoose.Schema({
-  name: String,
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  photo: {
+    type: String,
+    required: true
+  },
   email: {
     type: String,
     required: true,
@@ -11,15 +22,21 @@ var UserSchema = mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  location: String,
+  rating:   Number
 });
 
 UserSchema.set('toJSON', {
   transform: function(doc, ret, options) {
     var returnJson = {
-      id: ret._id,
-      email: ret.email,
-      name: ret.name,
+      id:         ret._id,
+      firstName:  ret.firstName,
+      lastName:   ret.lastName,
+      photo:      ret.photo,
+      email:      ret.email,
+      location:   ret.location,
+      rating:     ret.rating
     };
     return returnJson;
   }
