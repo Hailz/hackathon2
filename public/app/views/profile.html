@@ -6,16 +6,16 @@
   <h3>Would you like to update your account?</h3>
   <container>
     <div class="form-group">
-      <label for="email">User Photo:</label>
+      <label for="photo">User Photo:</label>
       <img ng-src="{{currentUser.photo}}">
       <input type="text" ng-model="currentUser.photo">
     </div>
     <div class="form-group">
-      <label for="name">First Name:</label>
+      <label for="Firstname">First Name:</label>
       <input type="text" ng-model="currentUser.firstName">
     </div>
     <div class="form-group">
-      <label for="number">Last Name:</label>
+      <label for="lastName">Last Name:</label>
       <input type="text" ng-model='currentUser.lastName'>
     </div>
     <div class="form-group">
@@ -23,7 +23,7 @@
       <input type="text" ng-model="currentUser.email">
     </div>
     <div class="form-group">
-      <label for="email">Location:</label>
+      <label for="location">Location:</label>
       <input type="text" ng-model="currentUser.location">
     </div>
     <button type="submit" class="btn" ng-click='updateProfile(currentUser.id)'>Update</button>
