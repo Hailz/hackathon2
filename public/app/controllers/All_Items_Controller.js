@@ -12,6 +12,7 @@ angular
   function($scope, $state, $location, $stateParams, ItemFactory, ShoppingCartFactory, UserFactory, AuthFactory) {
     $scope.userName;
     $scope.items;
+    $scope.search;
     
     //add local storage to grab currentUser
     $scope.currentUserId;
@@ -31,6 +32,10 @@ angular
           function error (err) { console.log('error in runAtPageRender()') }
         );
       }
+    }
+
+    $scope.filterBy = function(name) {
+      $scope.search = name;
     }
 
     ItemFactory.getAllItems()
