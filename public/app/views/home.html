@@ -2,10 +2,14 @@
   <h1>Petsy</h1>
   <div class="row">
     <content ng-repeat='item in items track by item.id'>
-      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
-      <img ng-src="{{item.photo}}">
-      <a href="/checkout">Purchase!</a>
-      <button ng-click='addToCart(item)'>Add to Cart</button>
+      <div class="col-xs-2 col-m-2">
+        <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
+        <img class="searchItemImg" ng-src="{{item.photo}}">
+        <div class="row">
+          <a class="btn btn-success" href="/checkout">Purchase!</a>
+          <button class="btn btn-primary" ng-click='addToCart(item)'>Add to Cart</button>
+        </div>
+      </div>
     </content>  
   </div>  
 </content>
