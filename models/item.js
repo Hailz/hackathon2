@@ -7,7 +7,6 @@ var ItemSchema = mongoose.Schema({
   },
   photo:  {
     type: String,
-    
     required: true
   },
   price:  {
@@ -15,6 +14,10 @@ var ItemSchema = mongoose.Schema({
     required: true
   },
   size:  {
+    type: String,
+    required: true
+  },
+  sellerId: {
     type: String,
     required: true
   },
@@ -31,6 +34,7 @@ ItemSchema.set('toJSON', {
       photo:        ret.photo,
       price:        ret.price,
       size:         ret.size,
+      sellerId:     ret.sellerId,
       species:      ret.species,
       condition:    ret.condition,
       description:  ret.description
