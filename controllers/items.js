@@ -31,7 +31,7 @@ router.put('/:id', function(req, res){
     return res.send({message: 'Updated item details!'});
   });
 });
-router.delete('/:id', function(req, res){
+router.route('/:id').delete(function(req, res){
   Item.findByIdAndRemove(req.params.id, function(err){
     if (err) return res.status(500).send(err);
     return res.send({message: 'Delete Successful'});
