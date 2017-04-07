@@ -11,6 +11,8 @@ angular
       },
       postComment: function(commentObj) {
         console.log('in factory, new comment: ', commentObj);
+        console.log('reviewer: ', commentObj.reviewerId);
+        console.log('to: ', commentObj.sellerId);
         return $http.post('/api/comments', commentObj);
       }
     }
