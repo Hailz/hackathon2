@@ -26,12 +26,12 @@ angular
     function success(res) {
       // expecting an array of all items in shopping cart
       $scope.shoppingCart = res.data;
-
+      console.log('All shopping cart items', $scope.shoppingCart)
       //filter
       $scope.shoppingCart = $scope.shoppingCart.filter(function(item){
-        return item.userId ==  $scope.currentUserId
+        return item.userId ==  $scope.userId
       })
-      console.log('THIS!!!!!', res.data)
+      console.log('Items in specific users cart:', $scope.shoppingCart)
         // DB CALL FOR ALL ITEMS
       ItemFactory.getAllItems()
         .then(
@@ -41,7 +41,7 @@ angular
           console.log("All the items... ", $scope.items)
           // filter
           $scope.cartItems = $scope.items.filter(function(item){
-            return item.Id == $scope.shoppingCart.itemId
+            return item.id == $scope.shoppingCart.itemId
           })
           console.log("Items in the users cart...", $scope.cartItems)
         },
