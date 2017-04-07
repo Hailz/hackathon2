@@ -1,3 +1,4 @@
-<div>
-  
+<div ng-repeat='item in items track by item._id'>
+  <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+  <img ng-src="{{item.photo}}">
 </div>

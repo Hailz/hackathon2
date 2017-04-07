@@ -13,7 +13,7 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-var Item = require('./models/items');
+var Item = require('./models/item');
 var Comment = require('./models/comments');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
@@ -30,7 +30,7 @@ app.use('/api/users', expressJWT({secret: secret}).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
 
-app.use('/api/items', require('./controllers/items'));
+app.use('/api/items', require('./controllers/item'));
 app.use('/api/comments', require('./controllers/comments'));
 
 
