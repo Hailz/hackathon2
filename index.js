@@ -13,8 +13,7 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-// var Comments = require('./models/comments');
-// var Favorites = require('./models/favorites'); 
+var Items = require('./models/items');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
 
@@ -25,14 +24,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
 
+//Controllers
 app.use('/api/users', expressJWT({secret: secret}).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
 
-//Controllers
-// app.use('/api/comments', require('./controllers/comments'));
-// app.use('/twilioClient', require('./controllers/twilioClient'));
-// app.use('/api/favorites', require('./controllers/favorites'));
+app.use('/api/items', require('./controllers/items'));
 
 
 
