@@ -35,7 +35,7 @@ app.use('/api/users', expressJWT({secret: secret}).unless({
 app.use('/api/items', require('./controllers/items'));
 app.use('/api/comments', require('./controllers/comments'));
 app.use('/api/messages', require('./controllers/messages'));
-app.use('/api/shoppingCart', require('./controllers/shoppingCart'));
+app.use('/api/shoppingCarts', require('./controllers/shoppingCarts'));
 
 
 // this middleware will check if expressJWT did not authorize the user, and return a message
