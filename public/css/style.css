@@ -1,4 +1,7 @@
 body{
-  background-color: lightBlue;
   font-family: ‘Roboto Slab’, serif;;
+}
+.searchItemImg{
+  width: 100%;
+  height: 100%;
 }

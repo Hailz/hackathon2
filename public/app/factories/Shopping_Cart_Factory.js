@@ -1,6 +1,6 @@
 angular
 .module('App')
-.factory('ShoppingCart', [
+.factory('ShoppingCartFactory', [
   '$http',
   function($http) {
     return {
