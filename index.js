@@ -13,8 +13,8 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-var Item = require('./models/items');
-var Comment = require('./models/comments');
+var Item = require('./models/item');
+var Comment = require('./models/comment');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Hackathon2');
 
