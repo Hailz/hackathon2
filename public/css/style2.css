@@ -1,0 +1,15 @@
+/*Nav bar*/
+
+.navBar {
+  background-color: rgb(0, 143, 190);
+}
+.navLogo {
+  height: 45px;
+  padding: 0;
+}
+.logoHomeLink {
+  padding: 5px;
+}
+.navbar {
+  height: 60px;
+}
