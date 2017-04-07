@@ -1,4 +1,4 @@
-ivar mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var ItemSchema = mongoose.Schema({
   name: {
