@@ -52,7 +52,8 @@ angular
     })
     .state('userForSale', {
         url: '/userForSale',
-        templateUrl: 'app/views/userForSale.html'
+        templateUrl: 'app/views/userForSale.html',
+        controller: 'UserForSaleCtrl'
     })
     .state('profile',{
         url: '/profile',
