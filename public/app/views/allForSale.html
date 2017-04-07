@@ -8,5 +8,7 @@
   </content>
   <div ng-repeat='item in items | filter: search track by item._id'>
     <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+    <img ng-src="">
+    <a href="/checkout">Purchase!</a>
   </div>
 </div>
