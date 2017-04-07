@@ -2,13 +2,22 @@
   <h2>There aren't any items for sale right now!</h2>
 </div>
 <div ng-if='items'>
-  <content class="form-group input-group">
+  <div class="form-group input-group">
     <i class="input-group-addon glyphicon glyphicon-filter"></i>
     <input type="text" class="form-control" id="search" ng-model="search" placeholder="Filter Items for Sale">
-  </content>
-  <div ng-repeat='item in items | filter: search track by item._id'>
-    <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
-    <img ng-src="{{item.photo}}">
-    <a href="/checkout">Purchase!</a>
+  </div>
+  <div ng-if='search'>
+    <content ng-repeat='item in items | filter: search track by item._id'>
+      <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+      <img ng-src="{{item.photo}}">
+      <a href="/checkout">Purchase!</a>
+    </content>
+  </div>
+  <div ng-if='!search'>
+    <content ng-repeat='item in items track by item._id'>
+      <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+      <img ng-src="{{item.photo}}">
+      <a href="/checkout">Purchase!</a>
+    </content>
   </div>
 </div>
