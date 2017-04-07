@@ -19,7 +19,6 @@ router.route('/')
   });
 
 router.get('/:id', function(req, res) {
-  console.log('serverside id received: ',req.body)
   Item.findById(req.params.id, function(err, item) {
     if (err) return res.status(500).send(err);
     return res.send(item);

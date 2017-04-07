@@ -16,7 +16,8 @@ angular
     })
     .state('allForSale', {
         url: '/allForSale',
-        templateUrl: 'app/views/allForSale.html'
+        templateUrl: 'app/views/allForSale.html',
+        controller: 'AllItemsCtrl'
     })
     .state('editItem', {
         url: '/editItem/:id',

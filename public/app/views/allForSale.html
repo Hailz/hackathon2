@@ -6,15 +6,15 @@
     <input type="text" class="form-control" id="search" ng-model="search" placeholder="Filter Items for Sale">
   </div>
   <div ng-if='search'>
-    <content ng-repeat='item in items | filter: search track by item._id'>
-      <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+    <content ng-repeat='item in items | filter: search track by $index'>
+      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
       <img ng-src="{{item.photo}}">
       <a href="/checkout">Purchase!</a>
     </content>
   </div>
   <div ng-if='!search'>
-    <content ng-repeat='item in items track by item._id'>
-      <h2><a ng-href="/items/{{item._id}}">{{item.name}}</a></h2>
+    <content ng-repeat='item in items track by item.id'>
+      <h2><a ng-href="/item/{{item.id}}">{{item.name}}</a></h2>
       <img ng-src="{{item.photo}}">
       <a href="/checkout">Purchase!</a>
     </content>

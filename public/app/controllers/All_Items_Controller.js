@@ -1,12 +1,12 @@
 angular
 .module('App')
-.controller('HomeCtrl', [
+.controller('AllItemsCtrl', [
   '$scope',
   '$state',
-  'AuthFactory',
-  'UserFactory',
+  '$stateParams',
   'ItemFactory',
-  function($scope, $state, AuthFactory, UserFactory, ItemFactory) {
+  function($scope, $state, $stateParams, ItemFactory) {
+    $scope.userName;
     $scope.items;
     
     ItemFactory.getAllItems()
@@ -18,9 +18,5 @@ angular
         console.log('error in getSingleitem(): ', err);
       }
     );
-    
-    $scope.isLoggedIn = function() {
-        return Auth.isLoggedIn();
-    }
   }
-])
+]);
